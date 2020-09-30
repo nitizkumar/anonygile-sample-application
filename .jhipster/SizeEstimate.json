@@ -1,0 +1,40 @@
+{
+  "name": "SizeEstimate",
+  "fields": [
+    {
+      "fieldName": "size",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estimate",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "sizeEstimate",
+      "relationshipName": "user",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "board",
+      "otherEntityRelationshipName": "sizeEstimate",
+      "relationshipName": "board",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200930071833",
+  "entityTableName": "size_estimate",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Task",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TaskType",
+      "fieldValues": "STORY,TASK,EPIC,BUG"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "TaskStatus",
+      "fieldValues": "PLANNED,IN_PROGRESS,COMPLETE"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "size",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "taskBucket",
+      "otherEntityRelationshipName": "task",
+      "relationshipName": "bucket",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200930071733",
+  "entityTableName": "task",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

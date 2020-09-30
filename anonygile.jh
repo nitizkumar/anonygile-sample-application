@@ -1,0 +1,60 @@
+
+entity User {
+	name String
+    email String
+    password String
+}
+
+entity Board {
+	name String
+    type String
+}
+
+entity TaskBucket {
+	name String
+    status TaskStatus    
+}
+
+entity Task {
+	title String
+    type TaskType
+    status TaskStatus
+    startDate Instant
+    endDate Instant
+    priority Double
+    size String
+}
+
+entity SizeEstimate {
+	size String
+    estimate Double    
+}
+
+enum TaskType {
+	STORY, TASK, EPIC, BUG
+}
+
+enum TaskStatus {
+	PLANNED,IN_PROGRESS,COMPLETE
+}
+
+relationship ManyToOne {
+	SizeEstimate{user} to User
+}
+
+relationship ManyToOne {
+	SizeEstimate{board} to Board
+}
+
+relationship ManyToOne {
+	Board{owner} to User
+}
+
+relationship ManyToOne {
+	TaskBucket{board} to Board
+}
+
+relationship ManyToOne {
+	Task{bucket} to TaskBucket
+}
+

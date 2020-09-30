@@ -47,6 +47,10 @@ public class CacheConfiguration {
             createCache(cm, com.anonygile.tool.domain.User.class.getName());
             createCache(cm, com.anonygile.tool.domain.Authority.class.getName());
             createCache(cm, com.anonygile.tool.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.anonygile.tool.domain.Board.class.getName());
+            createCache(cm, com.anonygile.tool.domain.TaskBucket.class.getName());
+            createCache(cm, com.anonygile.tool.domain.Task.class.getName());
+            createCache(cm, com.anonygile.tool.domain.SizeEstimate.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

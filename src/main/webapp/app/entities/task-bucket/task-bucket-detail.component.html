@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="taskBucket">
+            <h2><span jhiTranslate="anonygileApp.taskBucket.detail.title">Task Bucket</span> {{ taskBucket.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="anonygileApp.taskBucket.name">Name</span></dt>
+                <dd>
+                    <span>{{ taskBucket.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="anonygileApp.taskBucket.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'anonygileApp.TaskStatus.' + taskBucket.status }}">{{ taskBucket.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="anonygileApp.taskBucket.board">Board</span></dt>
+                <dd>
+                    <div *ngIf="taskBucket.board">
+                        <a [routerLink]="['/board', taskBucket.board?.id, 'view']">{{ taskBucket.board?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/task-bucket', taskBucket.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

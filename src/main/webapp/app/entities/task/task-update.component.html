@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-task-heading" jhiTranslate="anonygileApp.task.home.createOrEditLabel">Create or edit a Task</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="STORY">{{ 'anonygileApp.TaskType.STORY' | translate }}</option>
+                        <option value="TASK">{{ 'anonygileApp.TaskType.TASK' | translate }}</option>
+                        <option value="EPIC">{{ 'anonygileApp.TaskType.EPIC' | translate }}</option>
+                        <option value="BUG">{{ 'anonygileApp.TaskType.BUG' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="PLANNED">{{ 'anonygileApp.TaskStatus.PLANNED' | translate }}</option>
+                        <option value="IN_PROGRESS">{{ 'anonygileApp.TaskStatus.IN_PROGRESS' | translate }}</option>
+                        <option value="COMPLETE">{{ 'anonygileApp.TaskStatus.COMPLETE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" formControlName="startDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" formControlName="endDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.priority" for="field_priority">Priority</label>
+                    <input type="number" class="form-control" name="priority" id="field_priority"
+                           formControlName="priority"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.size" for="field_size">Size</label>
+                    <input type="text" class="form-control" name="size" id="field_size"
+                           formControlName="size"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="anonygileApp.task.bucket" for="field_bucket">Bucket</label>
+                    <select class="form-control" id="field_bucket" name="bucket" formControlName="bucket">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taskBucketOption.id === editForm.get('bucket')!.value?.id ? editForm.get('bucket')!.value : taskBucketOption" *ngFor="let taskBucketOption of taskbuckets; trackBy: trackById">{{ taskBucketOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

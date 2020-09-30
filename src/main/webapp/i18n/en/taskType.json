@@ -1,0 +1,11 @@
+{
+  "anonygileApp": {
+    "TaskType": {
+      "null": "",
+      "STORY": "STORY",
+      "TASK": "TASK",
+      "EPIC": "EPIC",
+      "BUG": "BUG"
+    }
+  }
+}

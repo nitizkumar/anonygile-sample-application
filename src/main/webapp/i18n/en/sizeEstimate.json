@@ -1,0 +1,25 @@
+{
+  "anonygileApp": {
+    "sizeEstimate": {
+      "home": {
+        "title": "Size Estimates",
+        "createLabel": "Create a new Size Estimate",
+        "createOrEditLabel": "Create or edit a Size Estimate",
+        "notFound": "No Size Estimates found"
+      },
+      "created": "A new Size Estimate is created with identifier {{ param }}",
+      "updated": "A Size Estimate is updated with identifier {{ param }}",
+      "deleted": "A Size Estimate is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Size Estimate {{ id }}?"
+      },
+      "detail": {
+        "title": "Size Estimate"
+      },
+      "size": "Size",
+      "estimate": "Estimate",
+      "user": "User",
+      "board": "Board"
+    }
+  }
+}
