@@ -1,0 +1,34 @@
+{
+  "name": "TaskBucket",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "TaskStatus",
+      "fieldValues": "PLANNED,IN_PROGRESS,COMPLETE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "board",
+      "otherEntityRelationshipName": "taskBucket",
+      "relationshipName": "board",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200930071633",
+  "entityTableName": "task_bucket",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

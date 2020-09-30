@@ -1,0 +1,24 @@
+{
+  "anonygileApp": {
+    "taskBucket": {
+      "home": {
+        "title": "Task Buckets",
+        "createLabel": "Create a new Task Bucket",
+        "createOrEditLabel": "Create or edit a Task Bucket",
+        "notFound": "No Task Buckets found"
+      },
+      "created": "A new Task Bucket is created with identifier {{ param }}",
+      "updated": "A Task Bucket is updated with identifier {{ param }}",
+      "deleted": "A Task Bucket is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Bucket {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Bucket"
+      },
+      "name": "Name",
+      "status": "Status",
+      "board": "Board"
+    }
+  }
+}
